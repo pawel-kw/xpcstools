@@ -1,0 +1,39 @@
+[Misc]
+ttcf = 0
+trshld = 1e-07
+
+[Analysis]
+q1 = 0.001
+qs = 0.00035
+q2 = 0.005
+dq = 0.00012
+
+[Detector]
+pix = 0.055
+dt = 0.0013
+sddist = 5280
+
+[Beam]
+wavelength = 1.53
+cenx = 258.12
+ceny = 258.88
+
+[Filenames]
+data suffix = .edf
+first dark file = 0
+data prefix = S1g_C_25C_XPCS1_
+dark suffix = .edf
+last data file = 1000
+first data file = 1
+last dark file = 199
+dark prefix = img_
+sample name = S1g_C_25C_XPCS1
+
+[Directories]
+dark dir = /data/sc3884/Doubleshot/S1g_C/25C/
+save dir = /home/kwasniew/Experiments/Analysis/2014/ID10_ESRF_SC3884/analysis_python/Doubleshot/S1g_C/25C/XPCS1/
+data dir = /data/sc3884/Doubleshot/S1g_C/25C/
+default mask = /home/kwasniew/Experiments/Analysis/2014/ID10_ESRF_SC3884/maxipix2x2_mask0_Jan2014.edf
+flat field = /home/kwasniew/Experiments/Analysis/2014/ID10_ESRF_SC3884/maxipix2x2_ff_Jan2014_new_cum.edf
+mask = /home/kwasniew/Experiments/Analysis/2014/ID10_ESRF_SC3884/analysis_python/Doubleshot/S1g_C/22C/XPCS6/mask_S1g_C_22C_XPCS6.edf
+

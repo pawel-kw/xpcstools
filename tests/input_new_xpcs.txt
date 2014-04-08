@@ -1,0 +1,30 @@
+[Main]
+save dir = /home/kwasniew/Experiments/Analysis/2010/April2010/duke_cc_12C_XPCS/
+data dir = /home/kwasniew/Experiments/Data/2010/duke_cc_12C/
+flat field = /home/kwasniew/Tools/Python/pyxpcs_branch/flatfield_medipix_8keV-27April09.edf
+default mask = /home/kwasniew/Experiments/MAXIPIX/maxipix1_mask_2013.edf
+mask = /home/kwasniew/Experiments/Analysis/2010/April2010/duke_cc_12C_XPCS/mask.edf
+#q1 = 0.00227
+q1 = 0.00275
+qs = 0.00031
+q2 = 0.00364
+dq = 1e-04
+sample name = duke_cc_12c_
+wavelength = 1.52
+cenx = 143.5
+ceny = 133.5
+pix = 0.055
+sddist = 2160
+figure title = duke cc 12C
+mode = XPCS
+
+[Exp_bins]
+data prefix = duke_cc_12c_
+data suffix = .edf.gz
+first data file = 20
+last data file = 5001
+exp time = 1e-3
+bin start = 0
+bin stop = 3
+bin step = 10
+
