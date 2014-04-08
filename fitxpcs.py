@@ -98,6 +98,22 @@ class xpcsfitter(object):
             fit_out.leastsq()
             self.save_fit_res(FIT_NAME,fit_out.params,i)
 
+    def fit_KWW(self):
+        '''Perform KWW fit of the data
+        '''
+        FIT_NAME = 'KWW'
+        self.fit_params['gamma'].value = 1.0
+        self.fit_params['gamma'].vary = True
+        self.init_fit_res(FIT_NAME)
+        for i in xrange(len(self.q)):
+            ydata = self.cf_array[:,i]
+            yerr = self.err_array[:,i]
+            xdata = self.t_val
+            fit_out = lmfit.minimize(errfunc,self.fit_params,
+                                     args=(xdata,ydata,yerr,KWWmodel))
+            fit_out.leastsq()
+            self.save_fit_res(FIT_NAME,fit_out.params,i)
+
     def init_fit_res(self,res_name):
         '''Initializes the results container with zeros
         '''
@@ -116,10 +132,6 @@ class xpcsfitter(object):
             curr_res[key]['data'][qno] = results[key].value
             curr_res[key]['err'][qno] = results[key].stderr
 
-    def fit_KWW(self):
-        '''Perform KWW fit of the data
-        '''
-
     def save_to_file(self,filename):
         '''Saves the fit results into a json data file
         '''
@@ -135,5 +147,6 @@ if __name__ == '__main__':
     fitter = xpcsfitter(args.dataFile,args.errorFile)
     fitter.fit_SimExp()
     print(fitter.fit_results['SimExp']['Gamma']['err'])
+    fitter.fit_KWW()
     fitter.save_to_file('./fit_res.json')
 
